@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/shopping-bag-icon.png" type="images/x-icon">
+    <title>Daisy Doo
+    </title>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap css -->fnn n bv
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- css search  -->
+    <style>
+        .order-lg-2 {
+            height: 30px;
+            display: flex;
+            cursor: pointer;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 30px;
+            align-items: center;
+            box-shadow: 0 10px 25px black;
+        }
+
+        .order-lg-2:hover input {
+            width: 140px;
+        }
+
+        .order-lg-2 input {
+            width: 0;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            transition: 1s;
+            background: transparent;
+        }
+
+        .order-lg-2 a .fas {
+            color: black;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <!--bagian navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+            <div class="container">
+                <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="index.html">
+                    <img src="images/shopping-bag-icon.png" alt="site icon">
+                    <span class="text-uppercase fw-lighter ms-2">DAISY DOO</span>
+                </a>
+                <!-- bagian icon cart -->
+                <div class="order-lg-2 nav-btns" id="cart">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                    <a href="javascript:void(0);" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <!-- akhir icon chart -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                    <ul class="navbar-nav mx-auto text-center">
+                        <li class="nav-item px-2 py-2">
+                            <a class="nav-link text-uppercase text-dark" href="#header">beranda</a>
+                        </li>
+                        <li class="nav-item px-2 py-2">
+                            <a class="nav-link text-uppercase text-dark" href="#collection">koleksi</a>
+                        </li>
+                        <li class="nav-item px-2 py-2">
+                            <a class="nav-link text-uppercase text-dark" href="#special">spesial</a>
+                        </li>
+                        <li class="nav-item px-2 py-2">
+                            <a class="nav-link text-uppercase text-dark" href="#review">review</a>
+                        </li>
+                        <li class="nav-item px-2 py-2">
+                            <a class="nav-link text-uppercase text-dark" href="#about">tentang kami</a>
+                        </li>
+                        <li class="nav-item px-2 py-2 border-0">
+                            <a class="nav-link text-uppercase text-dark" href="#popular">populer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar -->
+
+        <!-- header -->
+        <header id="header" class="vh-100 carousel slide" data-bs-ride="carousel" style="padding-top: 104px;">
+            <div class="container h-100 d-flex align-items-center carousel-inner">
+                <div class="text-center carousel-item active">
+                    <h2 class="text-capitalize text-white">Koleksi Terbaik Dari Kami</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">TERBARU DAN TRENDY</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">belanja yuk!</a>
+                </div>
+                <div class="text-center carousel-item">
+                    <h2 class="text-capitalize text-white">harga & penawaran terbaik</h2>
+                    <h1 class="text-uppercase py-2 fw-bold text-white">new season</h1>
+                    <a href="#" class="btn mt-3 text-uppercase">belanja yuk!</a>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#header" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </header>
+        <!-- end of header -->
+
+        <!-- collection -->
+      <section id="collection" class="py-5">
+        <div class="container">
+            <div class="title text-center">
+                <h2 class="position-relative d-inline-block">Koleksi Terbaru</h2>
+            </div>
+
+            <div class="row g-0">
+                <div class="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                    <button type="button" class="btn m-2 text-dark active-filter-btn" data-filter="*">Semua</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".best">Produk Terbaik</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".feat">Unggulan</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".new">Produk Terbaru</button>
+                </div>
+
+
+
+                <div class="content collection-list mt-4 row gx-0 gy-3" id="list">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="images/JAKET TALI.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="jaket">Jaket</p>
+                            <span class="fw-bold">100.000</span>
+                        </div>
+                    </div>
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="images/HODIE.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="hodie">Hodie</p>
+                            <span class="fw-bold">120.000</span>
+                        </div>
+                    </div>
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 new">
+                        <div class="collection-img position-relative">
+                            <img src="images/PINK.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="cardigan cute">Cardigan Gemas</p>
+                            <span class="fw-bold">150.000</span>
+                        </div>
+                    </div>
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="images/TOPI.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="topi animal">Topi Rajut</p>
+                            <span class="fw-bold">150.000</span>
+                        </div>
+                    </div>
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="images/SEPATU.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="sneakers">Sneakers</p>
+                            <span class="fw-bold">450.000</span>
+                        </div>
+                    </div>
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 new">
+                        <div class="collection-img position-relative">
+                            <img src="images/JAM.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="jam">Jam</p>
+                            <span class="fw-bold">350.000</span>
+                        </div>
+                    </div>
+
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 new">
+                        <div class="collection-img position-relative">
+                            <img src="images/TOP BIRU.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="crop top">Crop Top</p>
+                            <span class="fw-bold">80.000</span>
+                        </div>
+                    </div>
+
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="images/ROK.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="rok">Rok</p>
+                            <span class="fw-bold">130.000</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="images/TAS.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="Tas">Tas</p>
+                            <span class="fw-bold">290.000</span>
+                        </div>
+                    </div>
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="images/FLOWER.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="crop top motif">Crop Top Motif</p>
+                            <span class="fw-bold">120.000</span>
+                        </div>
+                    </div>
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="images/JAKET.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="jaket kulit">Jaket Kulit</p>
+                            <span class="fw-bold">120.000</span>
+                        </div>
+
+                    </div>
+                    <div class="content col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="images/VEST.png" class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                                <span class="text-primary"><i class="fas fa-star"></i></span>
+                            </div>
+                            <p class="text-capitalize my-1" id="vest">Vest</p>
+                            <span class="fw-bold">90.000</span>
+                        </div>
+                    </div>
+                </div>       
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- end of collection -->
+        <!-- special products -->
+        <section id="special" class="py-5">
+            <div class="container">
+                <div class="title text-center py-5">
+                    <h2 class="position-relative d-inline-block">Edisi Spesial</h2>
+                </div>
+
+                <div class="special-list row g-0">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img position-relative overflow-hidden">
+                            <img src="images/model1.jpg" class="w-100">
+                            <span
+                                class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-capitalize mt-3 mb-1">Putih</p>
+                            <span class="fw-bold d-block">629.000</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img position-relative overflow-hidden">
+                            <img src="images/model2.jpg" class="w-100">
+                            <span
+                                class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-capitalize mt-3 mb-1">Hitam</p>
+                            <span class="fw-bold d-block">569.000</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img position-relative overflow-hidden">
+                            <img src="images/model22.jpg" class="w-100">
+                            <span
+                                class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-capitalize mt-3 mb-1">Cream</p>
+                            <span class="fw-bold d-block">768.000</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                        <div class="special-img position-relative overflow-hidden">
+                            <img src="images/model4.jpg" class="w-100">
+                            <span
+                                class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                                <i class="fas fa-heart"></i>
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-capitalize mt-3 mb-1">Sweet Pink</p>
+                            <span class="fw-bold d-block">876.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of special products -->
+
+        <!-- blogs -->
+        <section id="offers" class="py-5">
+            <div class="container">
+                <div
+                    class="row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+                    <div class="offers-content">
+                        <span class="text-white">Discount Up To 40%</span>
+                        <h2 class="mt-2 mb-4 text-white">Banyak penawaran menarik!</h2>
+                        <a href="#" class="btn">Belanja Sekarang!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of blogs -->
+
+        <!-- bagian blogs -->
+        <section id="review" class="py-5">
+            <div class="container">
+                <div class="title text-center py-5">
+                    <h2 class="position-relative d-inline-block">Review</h2>
+                </div>
+
+                <div class="row g-3">
+                    <div class="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
+                        <img src="images/prily.png" alt="">
+                        <div class="card-body px-0">
+                            <h4 class="card-title">Prilly Latuconsina</h4>
+                            <p class="card-text mt-3 text-muted">"Produk dari Daisy Doo sangat aesthetik dan bahannya
+                                pun
+                                nyaman. Jangan lupa langsung mampir ke storenya ya kawan"</p>
+
+                        </div>
+                    </div>
+
+                    <div class="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
+                        <img src="images/cipung.png" alt="">
+                        <div class="card-body px-0">
+                            <h4 class="card-title">Nagita Slavina dan Cipung</h4>
+                            <p class="card-text mt-3 text-muted">"Daisy Doo produknya sangat bagus dan nyaman saat
+                                dipakai
+                                yang pasti tidak ketinggalan zaman ya guys."</p>
+                            <p class="card-text">
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 col-md-6 col-lg-4 bg-transparent my-3">
+                        <img src="images/fadil.png" alt="">
+                        <div class="card-body px-0">
+                            <h4 class="card-title">Fadil Jaidi</h4>
+                            <p class="card-text mt-3 text-muted">"Omaygatt guys kalian harus beli barang fashion disini
+                                aku
+                                jamin kualitasnya wort it banget".</p>
+                            <p class="card-text">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of blogs -->
+
+        <!-- about us -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <div class="row gy-lg-5 align-items-center">
+                    <div class="col-lg-6 order-lg-1 text-center text-lg-start">
+                        <div class="title pt-3 pb-5">
+                            <h2 class="position-relative d-inline-block ms-4">Tentang Kami</h2>
+                        </div>
+                        <p class="lead text-muted">Menyediakan Fashion Wanita dan Pria</p>
+                        <p>Butik Daisy Doo adalah surganya para fashionista yang mencari tren terkini dalam dunia mode.
+                            Dengan semangat untuk memberikan pengalaman berbelanja yang tak terlupakan, butik ini
+                            menjadi
+                            destinasi favorit bagi mereka yang mencari gaya unik dan inovatif.</p>
+                    </div>
+                    <div class="col-lg-6 order-lg-0">
+                        <img src="images/cover5.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of about us -->
+
+        <!-- popular -->
+        <section id="popular" class="py-5">
+            <div class="container">
+                <div class="title text-center pt-3 pb-5">
+                    <h2 class="position-relative d-inline-block ms-4">Popular Di Tahun Ini</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 row g-3">
+                        <h3 class="fs-5">Rating Tertinggi</h3>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/cardigan.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Cardigan</p>
+                                <span>80k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/rokkecil.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Rok</p>
+                                <span>75k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/jeansbiru.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Jeans Blue</p>
+                                <span>150k</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 row g-3">
+                        <h3 class="fs-5">Penjualan terbaik</h3>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/sepatuputih.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Sepatu</p>
+                                <span>200k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/jampink.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Jam cute</p>
+                                <span>439.000k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/taspink.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Tas</p>
+                                <span>679.00k</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 row g-3">
+                        <h3 class="fs-5">Diskon</h3>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/jakettebal.jpg" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Jacket</p>
+                                <span>459k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/sendal.jpg" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Sendal</p>
+                                <span>180k</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start justify-content-start">
+                            <img src="images/tasbulu.png" alt="" class="img-fluid pe-3 w-25">
+                            <div>
+                                <p class="mb-0">Tas</p>
+                                <span>182k</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of popular -->
+
+        <!-- newsletter -->
+        <section id="newsletter" class="py-5">
+            <div class="container">
+                <div class="d-flex flex-column align-items-center justify-content-center">
+                    <div class="title text-center pt-3 pb-5">
+                        <h2 class="position-relative d-inline-block ms-4">Saran</h2>
+                    </div>
+
+                    <p class="text-center text-muted">"Kami sangat menghargai masukan Anda! Kirimkan saran atau kritik
+                        Anda
+                        untuk membantu kami menjadi lebih baik."</p>
+                    <div class="input-group mb-3 mt-3">
+                        <input type="text" class="form-control" placeholder="Kirim masukan anda ..." id="emailInput">
+                        <button class="btn btn-primary" type="submit" onclick="showConfirmation()">Kirim</button>
+                    </div>
+                    <div class="mt-3" id="confirmationMessage" style="display: none;">
+                        <p class="text-success">Email telah terkirim!</p>
+                    </div>
+                </div>
+
+                <script>
+                    function showConfirmation() {
+                        // Mendapatkan nilai dari input email
+                        var emailValue = document.getElementById('emailInput').value;
+
+                        // Menggunakan alert sebagai contoh, namun biasanya ini akan ditampilkan di dalam elemen HTML
+                        alert('Email ' + emailValue + ' telah terkirim!');
+
+                        // Memunculkan pesan konfirmasi
+                        document.getElementById('confirmationMessage').style.display = 'block';
+                    }
+                </script>
+
+
+            </div>
+        </section>
+        <!-- end of newsletter -->
+
+        <!-- footer -->
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row text-white g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <a class="text-uppercase text-decoration-none brand text-white" href="index.html">Daisy Doo</a>
+                        <p class="text-white text-muted mt-3">Toko kami menyediakan berbagai fashion kekinian dan
+                            pastinya
+                            sangat terpercaya. Segera datang ke store kami, kami tunggu kehadirannya!!!</p>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light">Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="my-3">
+                                <a href="#" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Beranda
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#collection" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Koleksi
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#review" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Review
+                                </a>
+                            </li>
+                            <li class="my-3">
+                                <a href="#about" class="text-white text-decoration-none text-muted">
+                                    <i class="fas fa-chevron-right me-1"></i> Tentang Kami
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light mb-3">Kontak Kami</h5>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </span>
+                            <span class="fw-light">
+                                Jalan D.I Pandjaitan, Purwokerto Selatan, Banyumas
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="fw-light">
+                                zahrawangon123@gmail.com
+                            </span>
+                        </div>
+                        <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                            <span class="me-3">
+                                <i class="fas fa-phone-alt"></i>
+                            </span>
+                            <span class="fw-light">
+                                +81575746982
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-light mb-3">Ingin tahu lebih lanjut?</h5>
+                        <div>
+                            <ul class="list-unstyled d-flex">
+                                <li>
+                                    <a href="https://www.instagram.com/zahraaayuu__/"
+                                        class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://github.com/zahraayu21"
+                                        class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.tiktok.com/@bubbleggum__?is_from_webapp=1&sender_device=pc"
+                                        class="text-white text-decoration-none text-muted fs-4 me-4">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+    </div>
+    <!-- jquery -->
+    <script src="js/jquery-3.6.0.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- bootstrap js -->
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
